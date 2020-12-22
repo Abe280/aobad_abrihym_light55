@@ -1,8 +1,13 @@
 while True: 
-    print("Light levels:" + input.light_level())
-    if input.light_level()   < 8:
-        light.set_all(light.rgb(255,0,255))
-    elif input.light_level() <32:
-        light.set_all(light.rgb(0,0,0))
+    
+    #if light level is greater than 15, then set neopixels off
+    print("light level: " + input.light_level())
+    if input.light_level() > 15:
+        light.clear
+    
+    #if light level is equal to or greater than 6, then set neopixels off
+    elif input.light_level() >= 6 :
+        light.set_all(color.rgb(0,0,255))
+    
     else:
-        light.clear()
+         light.set_all(color.rgb(255,165,0))
